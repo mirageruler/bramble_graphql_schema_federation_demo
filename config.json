@@ -1,0 +1,3 @@
+{
+    "services": ["http://gqlgen-service/query", "http://graph-gophers-service/query", "http://nodejs-service/query"]
+}

@@ -34,8 +34,10 @@ services:
     expose:
       - 8080
   gateway:
-    build:
-      context: .
+    platform: linux/amd64
+    image: ghcr.io/movio/bramble
+    # build:
+    #   context: .  
     environment:
       - BRAMBLE_SERVICE_LIST=http://gqlgen-service:8080/query http://graph-gophers-service:8080/query http://nodejs-service:8080/query
     ports:
