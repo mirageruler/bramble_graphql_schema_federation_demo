@@ -1,0 +1,51 @@
+version: "3"
+services:
+  gqlgen-service:
+    build:
+      context: ./gqlgen-service
+      dockerfile: Dockerfile
+    healthcheck:
+      test: wget -qO - http://localhost:8080/health
+      interval: 5s
+      timeout: 1s
+      retries: 5
+    expose:
+      - 8080
+  graph-gophers-service:
+    healthcheck:
+      test: wget -qO - http://localhost:8080/health
+      interval: 5s
+      timeout: 1s
+      retries: 5
+    build:
+      context: ./graph-gophers-service
+      dockerfile: Dockerfile
+    expose:
+      - 8080
+  nodejs-service:
+    healthcheck:
+      test: wget -qO - http://localhost:8080/health
+      interval: 5s
+      timeout: 1s
+      retries: 5
+    build:
+      context: ./nodejs-service
+      dockerfile: Dockerfile
+    expose:
+      - 8080
+  gateway:
+    build:
+      context: .
+    environment:
+      - BRAMBLE_SERVICE_LIST=http://gqlgen-service:8080/query http://graph-gophers-service:8080/query http://nodejs-service:8080/query
+    ports:
+      - 8082:8082
+      - 8083:8083
+      - 9009:9009
+    depends_on:
+      gqlgen-service:
+        condition: service_healthy
+      graph-gophers-service:
+        condition: service_healthy
+      nodejs-service:
+        condition: service_healthy

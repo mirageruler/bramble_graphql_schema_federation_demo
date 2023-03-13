@@ -1,0 +1,36 @@
+# github.com/go-faker/faker/v4 v4.0.0-beta.3
+## explicit; go 1.17
+github.com/go-faker/faker/v4
+github.com/go-faker/faker/v4/pkg/errors
+github.com/go-faker/faker/v4/pkg/interfaces
+github.com/go-faker/faker/v4/pkg/options
+github.com/go-faker/faker/v4/pkg/slice
+# github.com/graph-gophers/graphql-go v1.4.0
+## explicit; go 1.13
+github.com/graph-gophers/graphql-go
+github.com/graph-gophers/graphql-go/decode
+github.com/graph-gophers/graphql-go/errors
+github.com/graph-gophers/graphql-go/internal/common
+github.com/graph-gophers/graphql-go/internal/exec
+github.com/graph-gophers/graphql-go/internal/exec/packer
+github.com/graph-gophers/graphql-go/internal/exec/resolvable
+github.com/graph-gophers/graphql-go/internal/exec/selected
+github.com/graph-gophers/graphql-go/internal/query
+github.com/graph-gophers/graphql-go/internal/schema
+github.com/graph-gophers/graphql-go/internal/validation
+github.com/graph-gophers/graphql-go/introspection
+github.com/graph-gophers/graphql-go/log
+github.com/graph-gophers/graphql-go/relay
+github.com/graph-gophers/graphql-go/trace/noop
+github.com/graph-gophers/graphql-go/trace/tracer
+github.com/graph-gophers/graphql-go/types
+# golang.org/x/text v0.3.8
+## explicit; go 1.17
+golang.org/x/text/cases
+golang.org/x/text/internal
+golang.org/x/text/internal/language
+golang.org/x/text/internal/language/compact
+golang.org/x/text/internal/tag
+golang.org/x/text/language
+golang.org/x/text/transform
+golang.org/x/text/unicode/norm
